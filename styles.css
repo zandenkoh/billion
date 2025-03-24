@@ -550,10 +550,29 @@ body.dark .close-btn:hover {
 @media (max-width: 600px) {
     .chat-container {
         padding: 15px;
+        height: 100vh;
+    }
+    
+    .chat-area {
+        min-height: calc(100% - 130px);
+        flex-grow: 0;
+        flex-shrink: 1;
     }
 
     .top-bar, .input-area {
         padding: 10px 15px;
+    }
+    
+    .top-bar {
+      height: 80px;
+    }
+    
+    .input-area {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      min-height: 70px;
     }
 
     .logo span {
