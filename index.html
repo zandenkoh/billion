@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Roulette</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="https://cdn.vectorstock.com/i/500p/71/59/letter-b-from-the-white-interwoven-strips-vector-8537159.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="top-bar">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                <span>AI Chat Roulette</span>
+            </div>
+            <div class="controls">
+                <button id="spinBtn" class="btn" title="New AI">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                </button>
+                <button id="profileBtn" class="btn" disabled title="Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                </button>
+                <button id="themeBtn" class="btn" title="Toggle Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </button>
+            </div>
+        </header>
+        <main class="chat-area" id="chatBox">
+            <div class="start-msg">Spin to vibe with a billionaire AI!</div>
+        </main>
+        <footer class="input-area">
+            <textarea id="userInput" enterkeyhint="send" placeholder="Type something..." rows="1" disabled></textarea>
+            <button id="sendBtn" class="btn send-btn" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            </button>
+        </footer>
+        <div class="spinner" id="spinnerOverlay">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="spin-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span>Connecting a billionaire...</span>
+        </div>
+        <div class="profile-modal" id="profileModal">
+            <div class="modal-content">
+                <button id="closeModal" class="btn close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+                <img id="aiAvatar" src="" alt="Avatar" class="avatar">
+                <h2 id="aiName"></h2>
+                <p id="aiBio"></p>
+                <div class="stats">
+                    <span>Net Worth: <strong id="aiNetWorth"></strong></span>
+                    <span>Industry: <strong id="aiIndustry"></strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="typeSound" src="https://freesound.org/data/previews/256/256643_5123851-lq.mp3"></audio>
+    <audio id="sendSound" src="https://freesound.org/data/previews/154/154777_2614438-lq.mp3"></audio>
+    <audio id="spinSound" src="https://freesound.org/data/previews/171/171671_2437358-lq.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
